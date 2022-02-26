@@ -1,0 +1,51 @@
+1. SQLlDR  userid/password control="controlfile.ctrl"
+
+2. RDBMS or Relational Database Management System is different from DBMS in the sense that RDBMS stores data as a collection of tables wherein you can define the relations between the common fields of the tables whereas, in DBMS, you cannot do so.
+
+3. Contraints  , NULL< Not null , CHECK , default , Unique key , primary key , foreign key 
+
+
+4. index 
+	Unique  Index 
+	Clustred Index
+	Non-Clustred Index
+
+5. NVL   -- if first value is null , then it uses the second value NVL(e.name , g.matchname  )
+
+6. trunc  -- trunc (sysdate )  it will always return just date portion of the Datetimestamp.
+
+7. DDL  -- create , alter and delete
+	DML -- select insert update delete
+	DCL -- Grant and Revoke 
+
+8. join
+	Inner join  -- returns only common values 
+	Left Join 
+	right join
+	Full  join
+	Self JOin  -- each row of the table is attached to itself as well as other rows of the Table 
+	
+9. Cursor 
+	1. Declare  -- it will have select statememt , to select the result set.
+	2. Open -- before we use the cursor it need to be opened 
+	3. fetch  -- it will fetch first result set , and subsequent execution will execute other result sets 
+	4. close -- close the cursor 
+
+10. OLTP
+	it is online transaction processing , allows huge group of people to execute massive amount of DB Trabsactions.
+
+11. Advanced SQL	
+SELECT GETDATE();
+SELECT SUBSTRING(Address, 1, CHARINDEX('(',Address)) FROM EmployeeInfo;
+SELECT * INTO NewTable FROM EmployeeInfo WHERE 1 = 0;
+CREATE TABLE NewTable AS SELECT * FROM EmployeeInfo;
+SELECT TOP N * FROM EmployeePosition ORDER BY Salary DESC;
+SELECT * FROM EmpPosition ORDER BY Salary DESC LIMIT N;
+SELECT CONCAT(EmpFname, ' ', EmpLname) AS 'FullName' FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE EmpLname LIKE '____a';
+SELECT Department, count(EmpID) AS EmpDeptCount  FROM EmployeeInfo GROUP BY Department  ORDER BY EmpDeptCount ASC;
+SELECT EmpID FROM (SELECT rowno, EmpID from EmployeeInfo) WHERE MOD(rowno,2)=0;   -- Even rows 
+SELECT EmpID FROM (SELECT rowno, EmpID from EmployeeInfo) WHERE MOD(rowno,2)=1;
+SELECT * FROM EmployeeInfo E  WHERE EXISTS  (SELECT * FROM EmployeePosition P WHERE E.EmpId = P.EmpId);
+SELECT DISTINCT Salary FROM EmployeePosition E1   WHERE 2 >= (SELECTCOUNT(DISTINCT Salary)FROM EmployeePosition E2    WHERE E1.Salary >= E2.Salary) ORDER BY E1.Salary DESC;
+https://www.edureka.co/blog/interview-questions/sql-query-interview-questions#currentdate
