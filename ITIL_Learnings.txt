@@ -1,0 +1,104 @@
+CI/CD 
+1. Continuus Integration and Continous Deployment / Delivery 
+	Source Code management tools like GIT is used to store the Code 
+	whenver any developer checkin the code it is followed by Automated Build and Automated Unit and Integration test  == This is Continous interation 
+	Some organization has their own automated test cases over the code , but some organization need manual intervention for Testing 
+	
+	Once Build and Unit testing is completed , now the code is ready build a package and deploy this in Next ENV -- Continous Delivery
+	Odyssey is the Internal CS Tool where they have used different Devopes tool to automate the deployment , but because of Stringetnt Audit guidelines and some manual intervention is explicitly kept to Avoid wrong code movement in the higher ENV 
+	Transporter is the tool which is part of Odyssey , which allows every team to write their own script and select the Input parameter.
+	and that script will first take backout of the existing code set and deploy only required components in the Higher environment.
+
+ITIL
+	Information Technology Infrstructure Library    -- Developed by UK gov back in 1989 
+	ITIL refers to a set of detailed practices for delivering high Quality 
+	it is broken into 2 main groups 
+	1. Service Support 
+		it all includes capturing change and releasing that change in the organization, there are multiple management comes as a part of this 
+			1. Incident Management - Logs Incident as Problem / Error , request for change.
+			2. Problem Management - when it is identified as Problem , then PROD Support will mark this as Problem Ticket and ask Dev team to fix  this.
+			3. Change Management   -- we access the change here , check risk , decide Priority , CAB Change Advisory Board
+			4. Release Management - packaging releases , checking the documents and ensure that Due dligiance is followed
+			5. Configuration Management -- also known as CMDB , configuration management Database --> Central repository for all configuration Items.
+			
+			
+	2. Service Delivery
+		It Includes delivery of IT services in the organization. 
+			1. Service Level Management -- Also use as SLA , agreement between IT and the different BU over providing a services on time. 
+			2. Availability Management --Ensure that Application is UP and running and the systes are healthy enough not to bring any downtime.
+			3. Busieness Continuity  Management -  Build a Disaster recovery plan and ensure that business can continue.
+			4. Financial Management  - Anything releated to budgets or provisionig of new hardware and capacity.
+			5. Capacity Management -  chck the capacity of the IT hardware to ensure high Level of services to our Businesses.
+
+3 Levels of ITIL Ceritifications 
+	Foundation Level 
+	
+ITSM  -- IT Service Management 
+Agile -- Another software development Methodology. Like waterfall
+Critical Incident  - Sevirity white  -- Normal
+Sevirity RED -- 
+
+In case of Major issues  , then we communicate to the one team and then they will raise one high Priority incident 
+after every 2 hours he will keep checking the status the incident and keep informaing the higher management about app availability . 
+
+PRB raised by support team 
+PRoblem ticket is raised for some critical Items  which can cause application downtime.
+
+there should be one incident using which Problem ticket can be raised
+
+
+Agile
+	Deploy an application in much more organized way  with minimum impact to the currently running applications .
+	customers and development, client centric development is considered as base of the agile .
+	
+There are 2 types of chanegs , where customers are not fully aware about the requirement (uses the agile methodology)
+the one who are fully aware use the waterfall model .
+Scrum is an iteration of plan, build , Test and review .
+	Product owner -- similar like manager
+	Scrum Master -- running the meeting , taking the updates , provide updates to Product Owner , Same like Team leader 
+	Team - Develoer, tester , ENV management, 
+	Product Backlog -- Product owner / Scrum master will divide the task into small code -- also called as Product Backlog 
+	Sprint Backlog   -- the piece of code eligible for sprint 
+	Sprint Planning 
+	Daily Scrum --   Daily status meeting 
+	Sprint review  -- end of the sprint (2 weeks of Sprint)
+
+Telemetry Data in Software -- The ethical and transperant collection of  user and usage data form Software 
+Splunk 
+	Log analysis tool  Ultimate solution for Log processing.
+	Splunk is the ultimate log collection and analysis tool
+	Splunk will download the  Logs and will send it to remote servers. 
+	Real time System Log analysis , Real time Alerts and Monitoring , Historical data store and analysis 
+	
+	Splunk Components 
+		Forwarders -- it will download the data and send it to the other services or Indexers , there is no GUI 
+		Indexers --  Actual Log data stored here ,
+		Search heads  - it will keep checking the data in the indexers and provide access to client machines.
+		Deployer -- it is responsible for updating the configuration 
+		Cluster Master -- Having multiple Indexers called as  Indexs Cluster  , and to manage the clusters  , Cluster master is used
+		Deployment Servers -- it contains the configuration to Pull the files from app server
+	Different commands used in the Splunk 
+		./splunk add forward-server 10.10.10.10:9997      --> This will add  the forwad server where we want to forward the Data 
+		./splunk add monitor /var/log/syslogs -index main -sourcetype MyUniversalForwarderLogs
+		./splunk enable listen  9997  -- this will allow the forwarder to listen on this port 
+		
+
+Python -- Python and Jingle can be used for web development
+https://www.youtube.com/watch?v=kqtD5dpn9C8    need to watch this video
+
+
+Networking Protocols 
+	1. Transmission Control Protocol (TCP): TCP is a popular communication protocol which is used for communicating over a network. It divides any message into series of packets that are sent from source to destination and there it gets reassembled at the destination.
+	2. Internet Protocol (IP): IP is designed explicitly as addressing protocol. It is mostly used with TCP. The IP addresses in packets help in routing them through different nodes in a network until it reaches the destination system. TCP/IP is the most popular protocol connecting the networks.
+	3. User Datagram Protocol (UDP): UDP is a substitute communication protocol to Transmission Control Protocol implemented primarily for creating loss-tolerating and low-latency linking between different applications.
+	4. Post office Protocol (POP): POP3 is designed for receiving incoming E-mails.
+	5. Simple mail transport Protocol (SMTP): SMTP is designed to send and distribute outgoing E-Mail.
+	6. File Transfer Protocol (FTP): FTP allows users to transfer files from one machine to another. Types of files may include program files, multimedia files, text files, and documents, etc.
+	7. Hyper Text Transfer Protocol (HTTP): HTTP is designed for transferring a hypertext among two or more systems. HTML tags are used for creating links. These links may be in any form like text or images. HTTP is designed on Client-server principles which allow a client system for establishing a connection with the server machine for making a request. The server acknowledges the request initiated by the client and responds accordingly.
+	8. Hyper Text Transfer Protocol Secure (HTTPS): HTTPS is abbreviated as Hyper Text Transfer Protocol Secure is a standard protocol to secure the communication among two computers one using the browser and other fetching data from web server. HTTP is used for transferring data between the client browser (request) and the web server (response) in the hypertext format, same in case of HTTPS except that the transferring of data is done in an encrypted format. So it can be said that https thwart hackers from interpretation or modification of data throughout the transfer of packets.
+	9. Telnet: Telnet is a set of rules designed for connecting one system with another. The connecting process here is termed as remote login. The system which requests for connection is the local computer, and the system which accepts the connection is the remote computer.
+	10. Gopher: Gopher is a collection of rules implemented for searching, retrieving as well as displaying documents from isolated sites. Gopher also works on the client/server principle.
+
+Personal Questions 
+1. Sometimes I talk too Much , Sometimes My email are way too explainatory 			
+			
