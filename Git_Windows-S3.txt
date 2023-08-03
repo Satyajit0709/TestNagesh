@@ -1,0 +1,1 @@
+This is sample file which shows the files are moving from GIT  to Windows to S3 bucket.
